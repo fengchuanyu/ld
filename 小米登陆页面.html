@@ -78,6 +78,45 @@
       margin: 0 35px 0 42px;
       border:1px solid #e0e0e0;
     }
+    .login-center{
+      width: 348px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .login-center input{
+      width: 306px;
+      height: 22px;
+      padding: 13px 16px 13px 14px;
+      display: block;
+      outline: none;
+      margin-bottom: 14px;
+      color: #333;
+      font-size: 14px;
+    }
+    .login-center button{
+      height: 50px;
+      width: 340px;
+      background-color: #ef5b00;
+      font-size: 14px;
+      color: #fff;
+      outline: none;
+    }
+    .lc-info{
+      font-size: 14px;
+      margin-top:10px;
+    }
+    .lc-info .left-info{
+      float: left;
+      color: #ef5b00;
+    }
+    .lc-info .right-info{
+      float: right;
+      color:#999;
+    }
+    .lc-info .right-info span:hover{
+      color: #ef5b00;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -94,7 +133,19 @@
             <span></span>
             <a href="#">扫码登录</a>
           </div>
-          <div class="login-center"></div>
+          <div class="login-center">
+            <input type="text" placeholder="邮箱/手机号/小米ID">
+            <input type="password" placeholder="密码">
+            <button>登录</button>
+            <div class="lc-info">
+              <span class="left-info">手机短信登录/注册</span>  
+              <div class="right-info">
+                <span>立即注册</span>
+                <span>|</span>
+                <span>忘记密码？</span>
+              </div>
+            </div>
+          </div>
           <div class="login-bottom"></div>
         </div>
       </div>
