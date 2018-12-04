@@ -5,34 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <style>
-    *{
-      margin:0;
-    }
-    .box{
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      position: absolute;
-      left:50%;
-      top:50%;
-      margin-left:-50px;
-      margin-top:-50px;
-      z-index: 10
-    }
-    .box2{
-      width: 100px;
-      height: 100px;
-      background-color: blue;
-      position: absolute;
-      left:50%;
-      top:50%;
-      
-    }
-  </style>
 </head>
 <body>
-  <div class="box"></div>
-  <div class="box2"></div>
+  <script>
+    // var a = 1;
+    // var b = 2;
+    // a = b;
+    // b=10;
+    // console.log(a);
+
+    var person = {
+      name:"小王",
+      age:20
+    }
+    var person2 = {
+      name:"小李",
+      age:18
+    }
+    person = person2;
+    person2.name = "小张"
+    console.log(person);
+
+
+    // 
+
+
+    
+  </script>
 </body>
 </html>
