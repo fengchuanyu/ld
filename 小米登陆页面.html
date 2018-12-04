@@ -117,6 +117,65 @@
       color: #ef5b00;
       cursor: pointer;
     }
+    .login-bottom{
+      width: 348px;
+      margin: 100px auto 0;
+      color: #bbb;
+      font-size: 14px;
+    }
+    .login-bottom fieldset{
+      border-width: 1px 0 0 0;
+      border-color: #fff;
+      text-align: center;
+    }
+    .lb-icon{
+      text-align: center;
+      margin-top: 20px;
+    }
+    .lb-icon li{
+      list-style: none;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: #ddd;
+      margin:0 17px;
+      border-radius: 50%;
+    }
+    .lb-icon .qq{
+      background-color: #0288d1;
+    }
+    .lb-icon .qq i{
+      background-position: -19px 0;
+    }
+    .lb-icon .sina{
+      background-color: #d32f2f;
+    }
+    .lb-icon .sina i{
+      background-position: -38px 0;
+    }
+    .lb-icon .alpay{
+      background-color: #0ae;
+    }
+    .lb-icon .alpay i{
+      margin-top: 6px;
+      margin-left: 4px;
+      background-position: -57px 0;
+      width: 25px;
+    }
+    .lb-icon .wechat{
+      background-color: #00d20d;
+    }
+    .lb-icon .wechat i{
+      background-position: -83px 0;
+      width: 24px;
+    }
+    .lb-icon i{
+      background-image: url('./img/icons_type.png');
+      width: 18px;
+      height: 18px;
+      display: block;
+      margin:4px auto 0;
+    }
   </style>
 </head>
 <body>
@@ -146,7 +205,19 @@
               </div>
             </div>
           </div>
-          <div class="login-bottom"></div>
+          <div class="login-bottom">
+            <fieldset>
+              <legend>其他方式登录</legend>
+            </fieldset>
+            <div class="lb-icon">
+              <ul>
+                <li class="qq"><i></i></li>
+                <li class="sina"><i></i></li>
+                <li class="alpay"><i></i></li>
+                <li class="wechat"><i></i></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       
