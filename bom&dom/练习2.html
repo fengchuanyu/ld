@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .list{
+      width: 100px;
+      border: 1px solid black;
+      display: none;
+      position: absolute;
+    }
+    .list li{
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      list-style: none;
+      border-bottom: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>设置待办</li>
+    <li>设置未读</li>
+    <li>设置已读</li>
+    <li>删除右键</li>
+  </ul>
+  <script>
+    var oList = document.getElementsByClassName("list")[0];
+    document.oncontextmenu = function(e){
+      oList.style.display='block'; 
+      oList.style.top = e.clientY+"px";
+      oList.style.left = e.clientX+"px";
+      // return false;   
+      e.preventDefault();  
+    }
+  </script>
+</body>
+</html>
