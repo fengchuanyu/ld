@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">按钮</button>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  <div class="box">a</div>
+  <div class="box">b</div>
+  <script>
+    var oBtn = document.getElementById("btn");
+    var aLi = document.getElementsByTagName("li");
+    var aBox = document.getElementsByClassName("box");
+    console.log(oBtn);
+    console.log(aLi);
+    console.log(aBox);
+    
+    oBtn.onmousemove = function(){
+      document.write("hello world");
+    }
+    for(var i=0;i<aLi.length;i++){
+      aLi[i].onclick = function(){
+        console.log(123);
+      }
+    }
+  </script>
+</body>
+</html>
