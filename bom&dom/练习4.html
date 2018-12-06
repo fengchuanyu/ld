@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid #999;
+            width: 600px;
+            margin:0 auto;
+            text-align: center
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav ul{
+            font-size: 0;
+        }
+        .nav li{
+            border-top:1px solid #999;
+            list-style: none;
+            display:inline-block;
+            border-right: 1px solid #999;
+            width: 149px;
+            text-align: center
+        }
+        .nav li:last-child{
+            border-right: 0;
+        }
+        .nav li img{
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <img id="bigImg" src="./image/slider1.jpg" alt="">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><img src="./image/slider1.jpg" alt=""></li>
+                <li><img src="./image/slider2.jpg" alt=""></li>
+                <li><img src="./image/slider3.jpg" alt=""></li>
+                <li><img src="./image/slider4.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aLi = document.getElementsByClassName("nav")[0].getElementsByTagName("img");
+        var oBigImg = document.getElementById("bigImg");
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onmouseover = function(){
+                var thisSrc = this.getAttribute("src");
+                oBigImg.setAttribute("src",thisSrc);
+            }
+        }
+    </script>
+</body>
+</html>
