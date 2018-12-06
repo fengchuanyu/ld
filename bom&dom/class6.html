@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<img src="./image/slider1.jpg" alt="">
+	<div id="div1" data-url="www.baidu.com">hello world</div>
+	<script>
+		var oDiv = document.getElementById("div1");
+		oDiv.setAttribute("class","box");
+		var dataUrl = oDiv.getAttribute("data-url");
+		console.log(oDiv.dataset);
+		
+	</script>
+</body>
+</html>
