@@ -7,6 +7,7 @@
     <title>Document</title>
     <style>
         .box{
+            position: relative;
             border: 1px solid #999;
             width: 600px;
             margin:0 auto;
@@ -33,10 +34,29 @@
         .nav li img{
             width: 120px;
         }
+        #bigImg{
+          width: 220px;
+          height: 220px;
+        }
+        #btn{
+          position: absolute;
+          width: 100%;
+          top:100px;
+        }
+        #btn span:first-child{
+          float: left;
+        }
+        #btn span:last-child{
+          float: right;
+        }
     </style>
 </head>
 <body>
     <div class="box">
+        <div id="btn">
+          <span data-arr="left"> &lt;</span>
+          <span data-arr="right"> &gt;</span>
+        </div>
         <div class="content">
             <img id="bigImg" src="./image/slider1.jpg" alt="">
         </div>
@@ -50,14 +70,42 @@
         </div>
     </div>
     <script>
+        var aBtn = document.getElementById("btn").getElementsByTagName("span");
         var aLi = document.getElementsByClassName("nav")[0].getElementsByTagName("img");
         var oBigImg = document.getElementById("bigImg");
+        var nowIndex = 0;
+
+        function changeImg(index){
+          if(index==4){
+            nowIndex = 0
+          }else if(index == -1){
+            nowIndex = 3
+          }
+          console.log(nowIndex);
+          var imgSrc = aLi[nowIndex].getAttribute("src"); 
+          oBigImg.setAttribute("src",imgSrc);
+        }
+        
         for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
             aLi[i].onmouseover = function(){
-                var thisSrc = this.getAttribute("src");
-                oBigImg.setAttribute("src",thisSrc);
+              nowIndex = this.index;
+              changeImg(this.index);
             }
         }
+        for(var j=0;j<aBtn.length;j++){
+          aBtn[j].onclick = function(){
+            var arr = this.dataset.arr;
+            if(arr=='left'){
+              changeImg(--nowIndex);
+            }else{
+              changeImg(++nowIndex);
+            }
+          }
+        }
+        setInterval(function(){
+          changeImg(++nowIndex);
+        },1000)
     </script>
 </body>
 </html>
