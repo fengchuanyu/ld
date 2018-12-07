@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 50px;
+			background-color:red;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<script>
+
+		var aBox = document.getElementsByClassName("box");
+		var timer = null;
+		for(var i =0;i<aBox.length;i++){
+			aBox[i].onmouseover =function(){
+				clearInterval(this.timer);
+				var _this = this;
+				this.timer = setInterval(function(){
+					if(_this.offsetWidth>500){
+						clearInterval(_this.timer);
+					}else{
+						_this.style.width = _this.offsetWidth + 10 +"px"
+					}
+				},16)
+			}
+
+			aBox[i].onmouseout = function(){
+				clearInterval(this.timer);
+				var _this = this;
+				this.timer = setInterval(function(){
+					if(_this.offsetWidth<300){
+						clearInterval(_this.timer);
+					}else{
+						_this.style.width = _this.offsetWidth - 10 +"px"
+					}
+				},16)
+			}
+		}
+
+		// var oBox = document.getElementById("box");
+		// var timer = null;
+		// oBox.onmouseover = function(){
+		// 	clearInterval(timer);
+		// 	timer = setInterval(function(){
+		// 		if(oBox.offsetWidth>500){
+		// 			clearInterval(timer);
+		// 		}else{
+		// 			oBox.style.width=	oBox.offsetWidth+10+"px"
+		// 		}
+		// 	},16)
+		// }
+		// oBox.onmouseout = function(){
+		// 	clearInterval(timer);
+		// 	timer = setInterval(function(){
+		// 		if(oBox.offsetWidth<300){
+		// 			clearInterval(timer)
+		// 		}else{
+		// 			oBox.style.width = oBox.offsetWidth-10+"px";
+		// 		}
+		// 	},16)
+			
+		// }
+	</script>
+</body>
+</html>
